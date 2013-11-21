@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<Context>
+    <Resource>
+        name="jdbc/testDB"
+        auth="Container"
+        type="javax.sql.DataSource"
+        username="root"
+        password=""
+        driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
+        url="jdbc:derby:WEB"
+    </Resource>
+
+
+    
+</Context>

@@ -21,17 +21,19 @@ public class ContextListener implements ServletContextListener{
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
+        String dburl = sce.getServletContext().getInitParameter("dburl");
         try {
-            DBManager manager = new DBManager();
+            DBManager manager = new DBManager(dburl);
             sce.getServletContext().setAttribute("dbmanager", manager);
         } catch (SQLException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(getClass().getName()).severe(ex.toString());
+            throw new RuntimeException(ex);
         }
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        DBManager.shutdown();
     }
     
 }
