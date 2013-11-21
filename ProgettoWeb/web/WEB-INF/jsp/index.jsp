@@ -5,14 +5,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>LOGINt</title>
+        <title>LOGIN</title>
     </head>
 
     <body>
         <form action="Utente" method="post">
-            <p>Username<input type="text" name="username"></p>
+            <p>Mail<input type="text" name="username"></p>
             <p>Password<input type="password" name="password"></p>
-            <p><input type="text" name="Login" value="Login"></p>
+            <p><input type="submit" name="Login" value="Login"></p>
         </form>
     </body>
 </html>
