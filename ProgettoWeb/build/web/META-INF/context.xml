@@ -12,9 +12,6 @@ and open the template in the editor.
         username="root"
         password=""
         driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
-        url="jdbc:derby:WEB"
+        url="jdbc:derby://localhost:1527/WEB"
     </Resource>
-
-
-    
 </Context>
