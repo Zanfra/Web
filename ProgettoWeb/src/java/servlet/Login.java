@@ -125,7 +125,7 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-/**
+
         Cookie[] cookies = request.getCookies();
         Cookie cookie, cookie1, cookie2;
         int autenticato = 0;
@@ -151,7 +151,8 @@ public class Login extends HttpServlet {
 
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();
-            out.println("<HTML><head><title>prova</title><body><H1>SONO DENTRO2 e ho inserito il nome " + username + "</h1>");
+            out.println("<HTML><head><title>esito</title><body><H1>");
+            
             try {
                 // DBManager Manager = new DBManager("sql3.freemysqlhosting.net");
                 if (manager.authenticate("Prova")) {

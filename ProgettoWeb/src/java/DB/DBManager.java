@@ -36,16 +36,18 @@ public class DBManager implements Serializable {
         }
     }
 
-    public Users authenticate(String username) throws SQLException {
-        PreparedStatement stm = conn.prepareStatement("SELECT * FROM users WHERE mail = ?");
+    public Users authenticate(String username, String password) throws SQLException {
+        PreparedStatement stm = conn.prepareStatement("SELECT * FROM users WHERE mail = ? AND password = ?");
         try {
             stm.setString(1, username);
+            stm.setString(2, password);
 
             ResultSet rs = stm.executeQuery();
             try {
                 if (rs.next()) {
                     Users user = new Users();
                     user.setmail(username);
+                    user.setpassword(rs.getString(password));
                     return user;
                 } else {
                     return null;

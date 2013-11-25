@@ -8,7 +8,6 @@ package listener;
 
 import DB.DBManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -18,6 +17,8 @@ import javax.servlet.ServletContextListener;
  * @author zanfra
  */
 public class ContextListener implements ServletContextListener{
+    public ContextListener(){
+    }
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
@@ -29,7 +30,15 @@ public class ContextListener implements ServletContextListener{
             Logger.getLogger(getClass().getName()).severe(ex.toString());
             throw new RuntimeException(ex);
         }
+    
+    //    Connection con =     // create connection
+  //    e.getServletContext().setAttribute("con", con);
+      System.out.println("contextInitialized(ServletContextEvent e)");
+    
+    
     }
+    
+    
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
